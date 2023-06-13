@@ -9,7 +9,6 @@ Plant data does not tend to change so as users request new plants the response f
 
 An extension that will come shortly after the above is implemented will be to add OpenAI(DALL-E) generated images for the plants as well.
 
-TODO: Update database to reflect all plant attributes returned by OpenAI
 ![datbase diagram](/app/assets/images/db-diagram.png)
 Things you may want to cover:
 

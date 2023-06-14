@@ -15,7 +15,6 @@ class CreatePlants < ActiveRecord::Migration[7.0]
       t.string :homeopathic_remedies
       t.string :spacing
       t.string :other_notes
-      t.string :date_planted
 
       t.timestamps
     end

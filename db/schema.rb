@@ -29,7 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_191803) do
     t.string "homeopathic_remedies"
     t.string "spacing"
     t.string "other_notes"
-    t.string "date_planted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -38,6 +37,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_13_191803) do
     t.bigint "user_id", null: false
     t.bigint "plant_id", null: false
     t.string "user_notes"
+    t.date "date_planted"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["plant_id"], name: "index_user_plants_on_plant_id"

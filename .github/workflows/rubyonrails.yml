@@ -38,12 +38,14 @@ jobs:
       - name: Set up database schema
         run: bin/rails db:schema:load
       # Add or replace test runners here
-      - name: Run tests
-        run: bin/rake
-
-      - uses: joshmfrankel/simplecov-check-action@1.0.0
+      - name: Run my tests
+        run: |
+          bundle exec rspec specs/
+      # Minimum configuration
+      - uses: joshmfrankel/simplecov-check-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
         with:

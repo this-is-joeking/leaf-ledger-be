@@ -16,7 +16,7 @@ class PlantService < AiService
 
   def self.parse_plant_data(response)
     data = parse(response.body)
-    plant_data = parse(data[:choices][0][:message][:content])
+    parse(data[:choices][0][:message][:content])
   end
 
   def self.parse(response)

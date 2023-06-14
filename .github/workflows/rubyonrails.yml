@@ -41,7 +41,7 @@ jobs:
       # Add or replace test runners here
       - name: Run my tests
         run: |
-          bundle exec rspec specs/
+          bundle exec rspec
       # Minimum configuration
       - uses: joshmfrankel/simplecov-check-action@main
         with:

@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a gardening expert. Users will send you the name of a plant that they
+        intend to grow in a raised garden bed and you will respond with briefly addressing
+        all of the following in JSON API format: {scientific name, key = scientific_name},
+        {common name, key = ''common_name''}, {planting location / sun exposure needs,
+        key = ''sun_exposure''}, {optimal planting time, key = ''planting_time''},
+        {method of planting, key = ''planting_method''}, {watering needs, key = ''watering''},
+        {fertilization needs, key = ''fertilization''}, {pruning needs, key = ''pruning''},
+        {harvesting timeline, key = ''harvest_timeline''}, {harvest method, key =
+        ''harvest_method''}, {pests and diseases that impact the plant commonly, key
+        = ''pests''}, {homeopathic ways to avoid pests and diseases that impact the
+        plant commonly, key = ''homeopathic_remedies''}, {optimal spacing between
+        plants, key = ''spacing''}, {other helpful notes about growing the plant that
+        are not mentioned previously, key = ''other_notes''}"},{"role":"user","content":"pumpkin"}],"temperature":0.7}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.6
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Jun 2023 02:23:26 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - user-sofybxq5yiakjqv9a2vrlojl
+      Openai-Processing-Ms:
+      - '12879'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89736'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 176ms
+      X-Request-Id:
+      - 6eb4c57d18f573df9285b6f4af9963c1
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7d77598ed8b6a709-PHX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "chatcmpl-7RWvhSjrLTzhXlatANsaYsgPVBw96",
+          "object": "chat.completion",
+          "created": 1686795793,
+          "model": "gpt-3.5-turbo-0301",
+          "usage": {
+            "prompt_tokens": 250,
+            "completion_tokens": 288,
+            "total_tokens": 538
+          },
+          "choices": [
+            {
+              "message": {
+                "role": "assistant",
+                "content": "{\n    \"scientific_name\": \"Cucurbita pepo\",\n    \"common_name\": \"Pumpkin\",\n    \"sun_exposure\": \"Full sun\",\n    \"planting_time\": \"Late May to early June\",\n    \"planting_method\": \"Direct sow seeds into garden bed or start seedlings indoors and transplant\",\n    \"watering\": \"1-2 inches of water per week\",\n    \"fertilization\": \"Fertilize with a balanced fertilizer at planting and then every 3-4 weeks\",\n    \"pruning\": \"Remove any lateral vines that are not producing fruit to encourage growth in the main vines\",\n    \"harvest_timeline\": \"80-120 days after planting\",\n    \"harvest_method\": \"Cut stem with pruning shears leaving 3-4 inches of stem attached to the fruit\",\n    \"pests\": \"Squash bugs, cucumber beetles, powdery mildew\",\n    \"homeopathic_remedies\": \"Spray plants with a mixture of water and dish soap to deter pests, plant marigolds or use neem oil as a natural insecticide\",\n    \"spacing\": \"4-6 feet between plants\",\n    \"other_notes\": \"Pumpkins need a lot of space to grow, so make sure to give them plenty of room in your raised garden bed. They prefer well-draining soil and plenty of sunlight.\"\n}"
+              },
+              "finish_reason": "stop",
+              "index": 0
+            }
+          ]
+        }
+  recorded_at: Thu, 15 Jun 2023 02:23:26 GMT
+recorded_with: VCR 6.1.0

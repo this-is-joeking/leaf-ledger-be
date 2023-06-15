@@ -14,6 +14,5 @@ FactoryBot.define do
     homeopathic_remedies { Faker::Lorem.sentence(word_count: 3) }
     spacing { Faker::Lorem.sentence(word_count: 3) }
     other_notes { Faker::Lorem.sentence(word_count: 3) }
-    date_planted { Faker::Date.between(from: 2.days.ago, to: Date.today) }
   end
 end

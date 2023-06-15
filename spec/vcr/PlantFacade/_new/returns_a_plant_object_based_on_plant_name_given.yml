@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a gardening expert. Users will send you the name of a plant that they
+        intend to grow in a raised garden bed and you will respond with briefly addressing
+        all of the following in JSON API format: {scientific name, key = scientific_name},
+        {common name, key = ''common_name''}, {planting location / sun exposure needs,
+        key = ''sun_exposure''}, {optimal planting time, key = ''planting_time''},
+        {method of planting, key = ''planting_method''}, {watering needs, key = ''watering''},
+        {fertilization needs, key = ''fertilization''}, {pruning needs, key = ''pruning''},
+        {harvesting timeline, key = ''harvest_timeline''}, {harvest method, key =
+        ''harvest_method''}, {pests and diseases that impact the plant commonly, key
+        = ''pests''}, {homeopathic ways to avoid pests and diseases that impact the
+        plant commonly, key = ''homeopathic_remedies''}, {optimal spacing between
+        plants, key = ''spacing''}, {other helpful notes about growing the plant that
+        are not mentioned previously, key = ''other_notes''}"},{"role":"user","content":"corn"}],"temperature":0.7}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.6
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 15 Jun 2023 02:31:45 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0301
+      Openai-Organization:
+      - user-sofybxq5yiakjqv9a2vrlojl
+      Openai-Processing-Ms:
+      - '13528'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89737'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 175ms
+      X-Request-Id:
+      - 2a03b2941b6eb6d044d429a2aa48343f
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7d7765b78b04a712-PHX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "chatcmpl-7RX3k37QmVCyRsyCf2lQR6ry3qOkU",
+          "object": "chat.completion",
+          "created": 1686796292,
+          "model": "gpt-3.5-turbo-0301",
+          "usage": {
+            "prompt_tokens": 248,
+            "completion_tokens": 293,
+            "total_tokens": 541
+          },
+          "choices": [
+            {
+              "message": {
+                "role": "assistant",
+                "content": "{\n    \"scientific_name\": \"Zea mays\",\n    \"common_name\": \"Corn\",\n    \"sun_exposure\": \"Full sun\",\n    \"planting_time\": \"Late spring to early summer\",\n    \"planting_method\": \"Direct sow seeds 1-2 inches deep, 4-6 inches apart, in rows 30-36 inches apart\",\n    \"watering\": \"Regular watering, especially during hot and dry periods\",\n    \"fertilization\": \"Fertilize with nitrogen-rich fertilizer when plants are knee-high and again when tassels form\",\n    \"pruning\": \"No pruning necessary\",\n    \"harvest_timeline\": \"70-100 days after planting\",\n    \"harvest_method\": \"Harvest ears when kernels are plump and milky. Twist and pull the ear downward to detach it from the stalk.\",\n    \"pests\": \"Common pests include corn earworm, cutworms, and armyworms. Diseases include corn smut and rust.\",\n    \"homeopathic_remedies\": \"Use companion planting with marigolds and beans to deter pests. Apply neem oil to control pests and diseases.\",\n    \"spacing\": \"Plant seeds 4-6 inches apart, in rows 30-36 inches apart.\",\n    \"other_notes\": \"Corn is a heavy feeder and requires fertile soil. It is wind-pollinated, so plant in blocks rather than single rows.\"\n}"
+              },
+              "finish_reason": "stop",
+              "index": 0
+            }
+          ]
+        }
+  recorded_at: Thu, 15 Jun 2023 02:31:45 GMT
+recorded_with: VCR 6.1.0

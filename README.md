@@ -36,7 +36,7 @@ The backend is deployed [here](https://leaf-ledger-be.herokuapp.com/)
 - Use AWS s3 for image storage
 
 ### Setup
-This app uses Rails 7.0.5 and Ruby 3.2.2
+This app uses Rails 7.0.5.1 and Ruby 3.2.2
 
 1. Fork and clone this repository
 1. `cd` into root directory
@@ -51,7 +51,7 @@ This app uses Rails 7.0.5 and Ruby 3.2.2
 - To run the test suite: Run `bundle exec rspec`
 ### Tech Stack
 - Ruby 3.2.2
-- Rails 7.0.5
+- Rails 7.0.5.1
 
 ### Database Schema
 ![datbase diagram](/app/assets/images/db-diagram.png)

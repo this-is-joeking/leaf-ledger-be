@@ -57,6 +57,7 @@ This app uses Rails 7.0.5.1 and Ruby 3.2.2
 ![datbase diagram](/app/assets/images/db-diagram.png)
 
 ### API Requests
+- [Get all plants](/docs/api_requests/plant_index.md)
 - [Get a plant](/docs/api_requests/plant_show.md)
 ### APIs Used
 

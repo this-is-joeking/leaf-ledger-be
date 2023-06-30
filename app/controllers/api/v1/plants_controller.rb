@@ -10,7 +10,7 @@ module Api
 
       def index
         plants = Plant.all
-        render json: PlantSerializer.new(plants), status: :ok
+        paginate json: PlantSerializer.new(plants), status: :ok
       end
 
       private

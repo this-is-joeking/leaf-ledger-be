@@ -6,6 +6,11 @@ ruby '3.2.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.5', '>= 7.0.5.1'
 
+# Used for pagination 
+gem 'kaminari'
+# Used for header pagination
+gem 'api-pagination'
+
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 

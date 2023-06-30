@@ -50,6 +50,8 @@ This app uses Rails 7.0.5 and Ruby 3.2.2
 1. Run `rails db:{drop,create,migrate}` to setup the databases
 - To run the test suite: Run `bundle exec rspec`
 ### Tech Stack
+- Ruby 3.2.2
+- Rails 7.0.5
 
 ### Database Schema
 ![datbase diagram](/app/assets/images/db-diagram.png)

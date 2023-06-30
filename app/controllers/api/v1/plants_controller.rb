@@ -8,6 +8,11 @@ module Api
         render_plant(plant)
       end
 
+      def index
+        plants = Plant.all
+        render json: PlantSerializer.new(plants), status: :ok
+      end
+
       private
 
       def render_plant(plant)

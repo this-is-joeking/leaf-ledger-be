@@ -9,7 +9,7 @@ module Api
       end
 
       def index
-        plants = Plant.all
+        plants = paginate Plant.all
         render json: PlantSerializer.new(plants), status: :ok
       end
 

@@ -20,12 +20,30 @@ RSpec.describe 'plant index' do
     expect(plant_data[:data].count).to eq(5)
     plant_data[:data].each do |plant|
       expect(plant).to be_a Hash
-      expect(plant.keys.sort).to eq([:id, :type, :attributes].sort)
+      expect(plant.keys.sort).to eq(%i[id type attributes].sort)
       expect(plant[:id].to_i).to be_a Integer
       expect(plant[:type]).to eq('plant')
       expect(plant[:attributes]).to be_a Hash
-      expect(plant[:attributes]).to have_key (:scientific_name)
-      expect(plant[:attributes]).to have_key (:common_name)
+      expect(plant[:attributes]).to have_key(:scientific_name)
+      expect(plant[:attributes]).to have_key(:common_name)
     end
+  end
+
+  it 'returns paginated response with 25 items per page' do
+    create_list(:plant, 30)
+    headers = {
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
+    }
+    get('/api/v1/plants/', headers:)
+
+    plant_data = JSON.parse(response.body, symbolize_names: true)
+
+    expect(Plant.count).to eq(30)
+    expect(response).to have_http_status(200)
+    expect(plant_data[:data].count).to eq(25)
+    expect(response.header['Per-Page']).to eq('25')
+    expect(response.header).to have_key('Link')
+    expect(response.header['Total']).to eq('30')
   end
 end

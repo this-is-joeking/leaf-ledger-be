@@ -37,14 +37,19 @@ RSpec.describe 'plant index' do
     }
     get('/api/v1/plants/', headers:)
 
-    plant_data = JSON.parse(response.body, symbolize_names: true)
+    plant_data1 = JSON.parse(response.body, symbolize_names: true)
 
     expect(Plant.count).to eq(30)
     expect(response).to have_http_status(200)
-    expect(plant_data[:data].count).to eq(25)
+    expect(plant_data1[:data].count).to eq(25)
     expect(response.header['Per-Page']).to eq('25')
     expect(response.header).to have_key('Link')
     expect(response.header['Total']).to eq('30')
+    
+    get('/api/v1/plants?page=2', headers:)
+    plant_data2 = JSON.parse(response.body, symbolize_names: true)
+    expect(response).to have_http_status(200)
+    expect(plant_data2[:data].count).to eq(5)
   end
 
   it 'returns results in alphabetical order by common name' do

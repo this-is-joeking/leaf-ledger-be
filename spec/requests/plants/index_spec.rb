@@ -46,4 +46,21 @@ RSpec.describe 'plant index' do
     expect(response.header).to have_key('Link')
     expect(response.header['Total']).to eq('30')
   end
+
+  it 'returns results in alphabetical order by common name' do
+    plant1 = create(:plant, common_name: 'Basil')
+    plant2 = create(:plant, common_name: 'Zebra')
+    plant3 = create(:plant, common_name: 'Apple')
+
+    headers = {
+      'CONTENT_TYPE' => 'application/json',
+      'ACCEPT' => 'application/json'
+    }
+    get('/api/v1/plants/', headers:)
+
+    plant_data = JSON.parse(response.body, symbolize_names: true)
+    expect(plant_data[:data].first[:attributes][:common_name]).to eq(plant3.common_name)
+    expect(plant_data[:data].second[:attributes][:common_name]).to eq(plant1.common_name)
+    expect(plant_data[:data].third[:attributes][:common_name]).to eq(plant2.common_name)
+  end
 end

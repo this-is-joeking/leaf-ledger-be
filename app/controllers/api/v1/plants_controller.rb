@@ -12,6 +12,10 @@ module Api
         render_plant(plant)
       end
 
+      def create
+        # TODO: move the plant creation here instead of going from index to show b/c thats crazy
+      end
+
       def index
         if params[:name]
           show

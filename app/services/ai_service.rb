@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AiService
   def self.conn
     Faraday.new(

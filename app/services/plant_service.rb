@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PlantService < AiService
   def self.new(plant_name)
     response = conn.post('/v1/chat/completions') do |req|

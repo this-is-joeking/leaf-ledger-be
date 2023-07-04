@@ -80,3 +80,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+TODO: Add error handling for any unexpected response from chat gpt

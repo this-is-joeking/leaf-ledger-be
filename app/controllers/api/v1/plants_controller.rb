@@ -2,15 +2,23 @@ module Api
   module V1
     class PlantsController < ApplicationController
       def show
-        plant = Plant.find_by('common_name ILIKE ?', params[:name])
+        if params[:name]
+          plant = Plant.find_by('common_name ILIKE ?', params[:name])
 
-        plant ||= PlantFacade.new(params[:name])
+          plant ||= PlantFacade.new(params[:name])
+        else
+          plant = Plant.find(params[:id])
+        end
         render_plant(plant)
       end
 
       def index
-        plants = paginate Plant.order(:common_name)
-        render json: PlantSerializer.new(plants), status: :ok
+        if params[:name]
+          show
+        else
+          plants = paginate Plant.order(:common_name)
+          render json: PlantSerializer.new(plants), status: :ok
+        end
       end
 
       private

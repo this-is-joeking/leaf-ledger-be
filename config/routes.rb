@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :plants, only: :index
-      get '/plants/:name', to: 'plants#show'
+      get '/plants/:id', to: 'plants#show'
     end
   end
 end

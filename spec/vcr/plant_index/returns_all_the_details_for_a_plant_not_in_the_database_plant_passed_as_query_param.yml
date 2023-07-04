@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a gardening expert. Users will send you the name of a plant that they
+        intend to grow in a raised garden bed and you will respond with briefly addressing
+        all of the following in JSON API format: {scientific name, key = scientific_name},
+        {common name, key = ''common_name''}, {planting location / sun exposure needs,
+        key = ''sun_exposure''}, {optimal planting time, key = ''planting_time''},
+        {method of planting, key = ''planting_method''}, {watering needs, key = ''watering''},
+        {fertilization needs, key = ''fertilization''}, {pruning needs, key = ''pruning''},
+        {harvesting timeline, key = ''harvest_timeline''}, {harvest method, key =
+        ''harvest_method''}, {pests and diseases that impact the plant commonly, key
+        = ''pests''}, {homeopathic ways to avoid pests and diseases that impact the
+        plant commonly, key = ''homeopathic_remedies''}, {optimal spacing between
+        plants, key = ''spacing''}, {other helpful notes about growing the plant that
+        are not mentioned previously, key = ''other_notes''}"},{"role":"user","content":"Jalapeno"}],"temperature":0.7}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.6
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 04 Jul 2023 18:28:28 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-sofybxq5yiakjqv9a2vrlojl
+      Openai-Processing-Ms:
+      - '4844'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89736'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 176ms
+      X-Request-Id:
+      - cfe9584c13c172d979c80da158dcb6bf
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7e196d80dee2a70c-PHX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "chatcmpl-7Yf39KALf7DkS9oSQpPEtmYYgNUZP",
+          "object": "chat.completion",
+          "created": 1688495303,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "{\n  \"scientific_name\": \"Capsicum annuum\",\n  \"common_name\": \"Jalapeno\",\n  \"sun_exposure\": \"Full sun\",\n  \"planting_time\": \"Spring\",\n  \"planting_method\": \"Transplanting seedlings\",\n  \"watering\": \"Regular watering, keep soil evenly moist\",\n  \"fertilization\": \"Fertilize every 4-6 weeks with balanced fertilizer\",\n  \"pruning\": \"Optional, pinch off growing tips to encourage bushier growth\",\n  \"harvest_timeline\": \"70-80 days after planting\",\n  \"harvest_method\": \"Harvest when peppers are firm and green\",\n  \"pests\": \"Aphids, spider mites, and fungal diseases\",\n  \"homeopathic_remedies\": \"Spraying neem oil or soap-water solution can help control pests\",\n  \"spacing\": \"12-18 inches between plants\",\n  \"other_notes\": \"Jalapenos can be harvested at any stage of ripeness, from green to red\"\n}"
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 249,
+            "completion_tokens": 216,
+            "total_tokens": 465
+          }
+        }
+  recorded_at: Tue, 04 Jul 2023 18:28:28 GMT
+recorded_with: VCR 6.1.0

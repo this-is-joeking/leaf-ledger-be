@@ -49,3 +49,6 @@
 }
 ```
 
+## Optional parameter
+Include `page` as parameter with given page number as a value. Page details can be found in headers.
+Ex: `GET http://localhost:3000/api/v1/plants?page=3`

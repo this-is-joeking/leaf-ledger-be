@@ -1,6 +1,6 @@
 # Get details on a plant
 ## Example Request
-`GET http://localhost:3000/api/v1/plants/basil`
+`GET http://localhost:3000/api/v1/plants/5`
 ## Example Response
 ```
 {

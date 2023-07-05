@@ -7,8 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   namespace :api do
     namespace :v1 do
-      resources :plants, only: :index
-      get '/plants/:id', to: 'plants#show'
+      resources :plants, only: [:show, :create, :index]
     end
   end
 end

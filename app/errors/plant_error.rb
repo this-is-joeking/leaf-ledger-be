@@ -1,0 +1,2 @@
+class PlantError < StandardError
+end

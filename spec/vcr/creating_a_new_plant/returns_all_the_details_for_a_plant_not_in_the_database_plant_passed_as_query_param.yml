@@ -18,7 +18,8 @@ http_interactions:
         = ''pests''}, {homeopathic ways to avoid pests and diseases that impact the
         plant commonly, key = ''homeopathic_remedies''}, {optimal spacing between
         plants, key = ''spacing''}, {other helpful notes about growing the plant that
-        are not mentioned previously, key = ''other_notes''}"},{"role":"user","content":"Jalapeno"}],"temperature":0.7}'
+        are not mentioned previously, key = ''other_notes''}, if you do not understand
+        the plant name provided respond simply with ''422''"},{"role":"user","content":"Jalapeno"}],"temperature":0.7}'
     headers:
       Content-Type:
       - application/json
@@ -36,7 +37,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 05 Jul 2023 14:14:43 GMT
+      - Thu, 06 Jul 2023 17:13:17 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -52,7 +53,7 @@ http_interactions:
       Openai-Organization:
       - user-sofybxq5yiakjqv9a2vrlojl
       Openai-Processing-Ms:
-      - '9102'
+      - '5493'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -64,44 +65,107 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '3499'
       X-Ratelimit-Remaining-Tokens:
-      - '89736'
+      - '89716'
       X-Ratelimit-Reset-Requests:
       - 17ms
       X-Ratelimit-Reset-Tokens:
-      - 176ms
+      - 188ms
       X-Request-Id:
-      - 76aa78e9cb6f58135366588306f3f146
+      - 79c7c3489941d39beb55e74f7264a8ff
       Cf-Cache-Status:
       - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e2037107dd7a709-PHX
+      - 7e297a178f32a721-PHX
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "chatcmpl-7YxZ47hQOHHz4FVA16NzPDROUPxc8",
+          "id": "chatcmpl-7ZMpTtZTnI7yxIqsm27GfnFzu80Be",
           "object": "chat.completion",
-          "created": 1688566474,
+          "created": 1688663591,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
               "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n  \"scientific_name\": \"Capsicum annuum\",\n  \"common_name\": \"Jalapeno\",\n  \"sun_exposure\": \"Full sun\",\n  \"planting_time\": \"Spring after the last frost\",\n  \"planting_method\": \"Direct sow or transplant seedlings\",\n  \"watering\": \"Water regularly, keeping the soil evenly moist\",\n  \"fertilization\": \"Fertilize with a balanced fertilizer every 4-6 weeks\",\n  \"pruning\": \"Pinch off the top of the plant when it reaches 8-12 inches in height to encourage branching\",\n  \"harvest_timeline\": \"About 70-80 days from planting\",\n  \"harvest_method\": \"Harvest when the peppers are green, firm, and about 2-3 inches long\",\n  \"pests\": \"Common pests include aphids, flea beetles, and spider mites\",\n  \"homeopathic_remedies\": \"Spraying the plant with a mixture of water and neem oil can help control pests\",\n  \"spacing\": \"Plant jalapenos about 12-18 inches apart\",\n  \"other_notes\": \"Jalapenos prefer well-draining soil and benefit from staking or trellising to support the heavy fruit.\"\n}"
+                "content": "{\n  \"scientific_name\": \"Capsicum annuum\",\n  \"common_name\": \"Jalapeno\",\n  \"sun_exposure\": \"Full sun\",\n  \"planting_time\": \"Late spring/early summer\",\n  \"planting_method\": \"Transplanting seedlings\",\n  \"watering\": \"Regular watering, keeping soil evenly moist\",\n  \"fertilization\": \"Fertilize every 2-3 weeks with a balanced organic fertilizer\",\n  \"pruning\": \"Not necessary, but can be pruned to improve air circulation\",\n  \"harvest_timeline\": \"70-80 days after planting\",\n  \"harvest_method\": \"Harvest when peppers reach desired size and color\",\n  \"pests\": \"Aphids, spider mites, and pepper weevils\",\n  \"homeopathic_remedies\": \"Spraying plants with a mixture of water and neem oil can help deter pests\",\n  \"spacing\": \"18-24 inches apart\",\n  \"other_notes\": \"Jalapenos prefer well-drained soil and can be grown in containers as well\"\n}"
               },
               "finish_reason": "stop"
             }
           ],
           "usage": {
-            "prompt_tokens": 249,
-            "completion_tokens": 262,
-            "total_tokens": 511
+            "prompt_tokens": 264,
+            "completion_tokens": 227,
+            "total_tokens": 491
           }
         }
-  recorded_at: Wed, 05 Jul 2023 14:14:43 GMT
+  recorded_at: Thu, 06 Jul 2023 17:13:17 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"A mature and flourishing Jalapeno in a garden in the style
+        of photo realistic art","n":1,"size":"512x512"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.6
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 06 Jul 2023 17:13:24 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-sofybxq5yiakjqv9a2vrlojl
+      X-Request-Id:
+      - c06849c34d0633072787c51917d32117
+      Openai-Processing-Ms:
+      - '6662'
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7e297a3bfe2ea724-PHX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "created": 1688663604,
+          "data": [
+            {
+              "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-aoiWXvOFNMOh2qiOUa8zkhRI/user-SoFYbxq5yIaKjQV9a2VrlOJL/img-v4NMLWCmVuVnVU67qRFPh365.png?st=2023-07-06T16%3A13%3A24Z&se=2023-07-06T18%3A13%3A24Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-07-06T07%3A09%3A30Z&ske=2023-07-07T07%3A09%3A30Z&sks=b&skv=2021-08-06&sig=IMGYvrCCroPxL6W%2BdV2nV5fflU5i3m0lr1GsWnFbm58%3D"
+            }
+          ]
+        }
+  recorded_at: Thu, 06 Jul 2023 17:13:24 GMT
 recorded_with: VCR 6.1.0

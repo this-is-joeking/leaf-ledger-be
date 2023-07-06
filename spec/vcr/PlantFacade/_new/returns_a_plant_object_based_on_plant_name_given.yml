@@ -18,7 +18,8 @@ http_interactions:
         = ''pests''}, {homeopathic ways to avoid pests and diseases that impact the
         plant commonly, key = ''homeopathic_remedies''}, {optimal spacing between
         plants, key = ''spacing''}, {other helpful notes about growing the plant that
-        are not mentioned previously, key = ''other_notes''}"},{"role":"user","content":"corn"}],"temperature":0.7}'
+        are not mentioned previously, key = ''other_notes''}, if you do not understand
+        the plant name provided respond simply with ''422''"},{"role":"user","content":"corn"}],"temperature":0.7}'
     headers:
       Content-Type:
       - application/json
@@ -36,7 +37,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Thu, 15 Jun 2023 02:31:45 GMT
+      - Thu, 06 Jul 2023 17:13:04 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -48,11 +49,11 @@ http_interactions:
       Cache-Control:
       - no-cache, must-revalidate
       Openai-Model:
-      - gpt-3.5-turbo-0301
+      - gpt-3.5-turbo-0613
       Openai-Organization:
       - user-sofybxq5yiakjqv9a2vrlojl
       Openai-Processing-Ms:
-      - '13528'
+      - '46623'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -64,44 +65,107 @@ http_interactions:
       X-Ratelimit-Remaining-Requests:
       - '3499'
       X-Ratelimit-Remaining-Tokens:
-      - '89737'
+      - '89718'
       X-Ratelimit-Reset-Requests:
       - 17ms
       X-Ratelimit-Reset-Tokens:
-      - 175ms
+      - 188ms
       X-Request-Id:
-      - 2a03b2941b6eb6d044d429a2aa48343f
+      - 99fa1d2fcb87d8fbd030c2ed46c254a0
       Cf-Cache-Status:
       - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 7d7765b78b04a712-PHX
+      - 7e2978c3bfcaa712-PHX
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "chatcmpl-7RX3k37QmVCyRsyCf2lQR6ry3qOkU",
+          "id": "chatcmpl-7ZMpGREQUKGVBkMUz8rv7GCLrIfXj",
           "object": "chat.completion",
-          "created": 1686796292,
-          "model": "gpt-3.5-turbo-0301",
-          "usage": {
-            "prompt_tokens": 248,
-            "completion_tokens": 293,
-            "total_tokens": 541
-          },
+          "created": 1688663578,
+          "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
+              "index": 0,
               "message": {
                 "role": "assistant",
-                "content": "{\n    \"scientific_name\": \"Zea mays\",\n    \"common_name\": \"Corn\",\n    \"sun_exposure\": \"Full sun\",\n    \"planting_time\": \"Late spring to early summer\",\n    \"planting_method\": \"Direct sow seeds 1-2 inches deep, 4-6 inches apart, in rows 30-36 inches apart\",\n    \"watering\": \"Regular watering, especially during hot and dry periods\",\n    \"fertilization\": \"Fertilize with nitrogen-rich fertilizer when plants are knee-high and again when tassels form\",\n    \"pruning\": \"No pruning necessary\",\n    \"harvest_timeline\": \"70-100 days after planting\",\n    \"harvest_method\": \"Harvest ears when kernels are plump and milky. Twist and pull the ear downward to detach it from the stalk.\",\n    \"pests\": \"Common pests include corn earworm, cutworms, and armyworms. Diseases include corn smut and rust.\",\n    \"homeopathic_remedies\": \"Use companion planting with marigolds and beans to deter pests. Apply neem oil to control pests and diseases.\",\n    \"spacing\": \"Plant seeds 4-6 inches apart, in rows 30-36 inches apart.\",\n    \"other_notes\": \"Corn is a heavy feeder and requires fertile soil. It is wind-pollinated, so plant in blocks rather than single rows.\"\n}"
+                "content": "{\n  \"scientific_name\": \"Zea mays\",\n  \"common_name\": \"Corn\",\n  \"sun_exposure\": \"Full sun\",\n  \"planting_time\": \"Spring\",\n  \"planting_method\": \"Direct sow or transplant seedlings\",\n  \"watering\": \"Regular watering, keep the soil consistently moist\",\n  \"fertilization\": \"Apply balanced fertilizer at planting and side-dress with nitrogen during growth\",\n  \"pruning\": \"No pruning required\",\n  \"harvest_timeline\": \"70-90 days from planting\",\n  \"harvest_method\": \"Harvest when the ears are fully developed and the silks have turned brown\",\n  \"pests\": \"Common pests include corn earworm, armyworms, and corn borers\",\n  \"homeopathic_remedies\": \"Use neem oil or insecticidal soap to control pests\",\n  \"spacing\": \"Plant seeds 8-12 inches apart in rows spaced 24-36 inches apart\",\n  \"other_notes\": \"Corn is a heavy feeder, so it's important to provide adequate nutrients\"\n}"
               },
-              "finish_reason": "stop",
-              "index": 0
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 261,
+            "completion_tokens": 225,
+            "total_tokens": 486
+          }
+        }
+  recorded_at: Thu, 06 Jul 2023 17:13:04 GMT
+- request:
+    method: post
+    uri: https://api.openai.com/v1/images/generations
+    body:
+      encoding: UTF-8
+      string: '{"prompt":"A mature and flourishing corn in a garden in the style of
+        photo realistic art","n":1,"size":"512x512"}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.6
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 06 Jul 2023 17:13:11 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Openai-Version:
+      - '2020-10-01'
+      Openai-Organization:
+      - user-sofybxq5yiakjqv9a2vrlojl
+      X-Request-Id:
+      - cb73ac0b2416032e407099bb24605df6
+      Openai-Processing-Ms:
+      - '6797'
+      Access-Control-Allow-Origin:
+      - "*"
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7e2979ea2cbc1b0f-PHX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "created": 1688663591,
+          "data": [
+            {
+              "url": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-aoiWXvOFNMOh2qiOUa8zkhRI/user-SoFYbxq5yIaKjQV9a2VrlOJL/img-NsdoSNITFny3PufnrfNiGdLF.png?st=2023-07-06T16%3A13%3A11Z&se=2023-07-06T18%3A13%3A11Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-07-05T22%3A56%3A19Z&ske=2023-07-06T22%3A56%3A19Z&sks=b&skv=2021-08-06&sig=PND3w2DZ4jF2j20DVlV1JPt/PYFSbBH4otSNSI0dERk%3D"
             }
           ]
         }
-  recorded_at: Thu, 15 Jun 2023 02:31:45 GMT
+  recorded_at: Thu, 06 Jul 2023 17:13:11 GMT
 recorded_with: VCR 6.1.0

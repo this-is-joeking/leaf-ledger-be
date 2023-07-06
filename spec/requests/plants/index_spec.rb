@@ -97,7 +97,7 @@ RSpec.describe 'plant index' do
       expect(plant[:attributes][:common_name]).to eq('Basil')
     end
 
-    it 'returns all partial matches' do
+    it 'returns all partial matches in alpha order' do
       create_list(:plant, 30)
       plant1 = create(:plant, common_name: 'jalapeno pepper')
       plant2 = create(:plant, common_name: 'anaheim pepper')
@@ -115,9 +115,9 @@ RSpec.describe 'plant index' do
       expect(Plant.count).to eq(33)
       expect(response).to have_http_status(200)
       expect(plant_data[:data].count).to eq(3)
-      plants.each do |plant|
-        expect(expected_search_results).to include(plant[:id].to_i)
-      end
+      expect(plants.first[:attributes][:common_name].downcase).to eq(plant2.common_name)
+      expect(plants.second[:attributes][:common_name].downcase).to eq(plant3.common_name)
+      expect(plants.third[:attributes][:common_name].downcase).to eq(plant1.common_name)
     end
   end
 end

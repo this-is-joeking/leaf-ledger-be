@@ -9,4 +9,8 @@ class AiService
       conn.request :authorization, 'Bearer', ENV['OPENAI_API_KEY']
     end
   end
+
+  def self.parse(response)
+    JSON.parse(response, symbolize_names: true)
+  end
 end

@@ -21,8 +21,4 @@ class PlantService < AiService
     message = data[:choices][0][:message][:content]
     parse(message)
   end
-
-  def self.parse(response)
-    JSON.parse(response, symbolize_names: true)
-  end
 end

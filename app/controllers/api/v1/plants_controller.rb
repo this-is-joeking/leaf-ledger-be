@@ -21,7 +21,7 @@ module Api
       def index
         if params[:q]
           # require 'pry'; binding.pry
-          plants = Plant.where("common_name ILIKE ?", "%#{params[:q]}%")
+          plants = Plant.where("common_name ILIKE ?", "%#{params[:q]}%").order(:common_name)
         else
           plants = paginate Plant.order(:common_name)
         end

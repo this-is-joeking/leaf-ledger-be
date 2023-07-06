@@ -70,4 +70,54 @@ RSpec.describe 'plant index' do
     expect(plant_data[:data].second[:attributes][:common_name]).to eq(plant1.common_name)
     expect(plant_data[:data].third[:attributes][:common_name]).to eq(plant2.common_name)
   end
+
+  describe 'search function/filter results' do
+    it 'accepts parameter to search by plant name case insensitive' do
+      create_list(:plant, 30)
+      create(:plant, common_name: 'Basil')
+
+      headers = {
+        'CONTENT_TYPE' => 'application/json',
+        'ACCEPT' => 'application/json'
+      }
+      get('/api/v1/plants?q=bAsiL', headers:)
+  
+      plant_data = JSON.parse(response.body, symbolize_names: true)
+      plant = plant_data[:data][0]
+
+      expect(Plant.count).to eq(31)
+      expect(response).to have_http_status(200)
+      expect(plant_data[:data].count).to eq(1)
+      expect(plant).to be_a Hash
+      expect(plant.keys.sort).to eq(%i[id type attributes].sort)
+      expect(plant[:id].to_i).to be_a Integer
+      expect(plant[:type]).to eq('plant')
+      expect(plant[:attributes]).to be_a Hash
+      expect(plant[:attributes]).to have_key(:scientific_name)
+      expect(plant[:attributes][:common_name]).to eq('Basil')
+    end
+
+    it 'returns all partial matches' do
+      create_list(:plant, 30)
+      plant1 = create(:plant, common_name: 'jalapeno pepper')
+      plant2 = create(:plant, common_name: 'anaheim pepper')
+      plant3 = create(:plant, common_name: 'bell pepper')
+      expected_search_results = [plant1.id, plant2.id, plant3.id]
+      headers = {
+        'CONTENT_TYPE' => 'application/json',
+        'ACCEPT' => 'application/json'
+      }
+      get('/api/v1/plants?q=pepp', headers:)
+  
+      plant_data = JSON.parse(response.body, symbolize_names: true)
+      plants = plant_data[:data]
+
+      expect(Plant.count).to eq(33)
+      expect(response).to have_http_status(200)
+      expect(plant_data[:data].count).to eq(3)
+      plants.each do |plant|
+        expect(expected_search_results).to include(plant[:id].to_i)
+      end
+    end
+  end
 end

@@ -19,7 +19,12 @@ module Api
       end
 
       def index
-        plants = paginate Plant.order(:common_name)
+        if params[:q]
+          # require 'pry'; binding.pry
+          plants = Plant.where("common_name ILIKE ?", "%#{params[:q]}%")
+        else
+          plants = paginate Plant.order(:common_name)
+        end
         render json: PlantSerializer.new(plants), status: :ok
       end
 

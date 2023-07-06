@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'plant index' do
@@ -45,7 +47,7 @@ RSpec.describe 'plant index' do
     expect(response.header['Per-Page']).to eq('25')
     expect(response.header).to have_key('Link')
     expect(response.header['Total']).to eq('30')
-    
+
     get('/api/v1/plants?page=2', headers:)
     plant_data2 = JSON.parse(response.body, symbolize_names: true)
     expect(response).to have_http_status(200)

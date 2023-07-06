@@ -1,0 +1,107 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.openai.com/v1/chat/completions
+    body:
+      encoding: UTF-8
+      string: '{"model":"gpt-3.5-turbo","messages":[{"role":"system","content":"You
+        are a gardening expert. Users will send you the name of a plant that they
+        intend to grow in a raised garden bed and you will respond with briefly addressing
+        all of the following in JSON API format: {scientific name, key = scientific_name},
+        {common name, key = ''common_name''}, {planting location / sun exposure needs,
+        key = ''sun_exposure''}, {optimal planting time, key = ''planting_time''},
+        {method of planting, key = ''planting_method''}, {watering needs, key = ''watering''},
+        {fertilization needs, key = ''fertilization''}, {pruning needs, key = ''pruning''},
+        {harvesting timeline, key = ''harvest_timeline''}, {harvest method, key =
+        ''harvest_method''}, {pests and diseases that impact the plant commonly, key
+        = ''pests''}, {homeopathic ways to avoid pests and diseases that impact the
+        plant commonly, key = ''homeopathic_remedies''}, {optimal spacing between
+        plants, key = ''spacing''}, {other helpful notes about growing the plant that
+        are not mentioned previously, key = ''other_notes''}"},{"role":"user","content":"Jalapeno"}],"temperature":0.7}'
+    headers:
+      Content-Type:
+      - application/json
+      User-Agent:
+      - Faraday v2.7.6
+      Authorization:
+      - Bearer <OPENAI_API_KEY>
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 05 Jul 2023 14:14:43 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Openai-Model:
+      - gpt-3.5-turbo-0613
+      Openai-Organization:
+      - user-sofybxq5yiakjqv9a2vrlojl
+      Openai-Processing-Ms:
+      - '9102'
+      Openai-Version:
+      - '2020-10-01'
+      Strict-Transport-Security:
+      - max-age=15724800; includeSubDomains
+      X-Ratelimit-Limit-Requests:
+      - '3500'
+      X-Ratelimit-Limit-Tokens:
+      - '90000'
+      X-Ratelimit-Remaining-Requests:
+      - '3499'
+      X-Ratelimit-Remaining-Tokens:
+      - '89736'
+      X-Ratelimit-Reset-Requests:
+      - 17ms
+      X-Ratelimit-Reset-Tokens:
+      - 176ms
+      X-Request-Id:
+      - 76aa78e9cb6f58135366588306f3f146
+      Cf-Cache-Status:
+      - DYNAMIC
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 7e2037107dd7a709-PHX
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: |
+        {
+          "id": "chatcmpl-7YxZ47hQOHHz4FVA16NzPDROUPxc8",
+          "object": "chat.completion",
+          "created": 1688566474,
+          "model": "gpt-3.5-turbo-0613",
+          "choices": [
+            {
+              "index": 0,
+              "message": {
+                "role": "assistant",
+                "content": "{\n  \"scientific_name\": \"Capsicum annuum\",\n  \"common_name\": \"Jalapeno\",\n  \"sun_exposure\": \"Full sun\",\n  \"planting_time\": \"Spring after the last frost\",\n  \"planting_method\": \"Direct sow or transplant seedlings\",\n  \"watering\": \"Water regularly, keeping the soil evenly moist\",\n  \"fertilization\": \"Fertilize with a balanced fertilizer every 4-6 weeks\",\n  \"pruning\": \"Pinch off the top of the plant when it reaches 8-12 inches in height to encourage branching\",\n  \"harvest_timeline\": \"About 70-80 days from planting\",\n  \"harvest_method\": \"Harvest when the peppers are green, firm, and about 2-3 inches long\",\n  \"pests\": \"Common pests include aphids, flea beetles, and spider mites\",\n  \"homeopathic_remedies\": \"Spraying the plant with a mixture of water and neem oil can help control pests\",\n  \"spacing\": \"Plant jalapenos about 12-18 inches apart\",\n  \"other_notes\": \"Jalapenos prefer well-draining soil and benefit from staking or trellising to support the heavy fruit.\"\n}"
+              },
+              "finish_reason": "stop"
+            }
+          ],
+          "usage": {
+            "prompt_tokens": 249,
+            "completion_tokens": 262,
+            "total_tokens": 511
+          }
+        }
+  recorded_at: Wed, 05 Jul 2023 14:14:43 GMT
+recorded_with: VCR 6.1.0

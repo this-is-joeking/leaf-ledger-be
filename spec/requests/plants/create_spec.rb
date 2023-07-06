@@ -67,7 +67,7 @@ RSpec.describe 'creating a new plant', :vcr do
     expect(error_message.keys).to eq([:error])
     expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
     expect(error_message[:error][:code]).to eq(422)
-    expect(error_message[:error][:message]).to eq("Invalid request, no name param given")
+    expect(error_message[:error][:message]).to eq('Invalid request, no name param given')
   end
 
   it 'responds with an error message if no value for name param is passed' do
@@ -85,6 +85,6 @@ RSpec.describe 'creating a new plant', :vcr do
     expect(error_message.keys).to eq([:error])
     expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
     expect(error_message[:error][:code]).to eq(422)
-    expect(error_message[:error][:message]).to eq("Invalid request, no value for name param given")
+    expect(error_message[:error][:message]).to eq('Invalid request, no value for name param given')
   end
 end

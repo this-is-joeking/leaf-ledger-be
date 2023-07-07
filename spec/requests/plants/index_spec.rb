@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'plant index' do
+RSpec.describe 'plant index', :vcr do
   it 'returns an array of all plants in the database' do
     create_list(:plant, 5)
 

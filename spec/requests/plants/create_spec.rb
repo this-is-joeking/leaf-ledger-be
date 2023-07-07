@@ -4,7 +4,8 @@ RSpec.describe 'creating a new plant', :vcr do
   it 'returns all the details for a plant not in the database, plant passed as query param', :vcr do
     plant_name = 'Jalapeno'
     expected_keys = %i[scientific_name common_name sun_exposure planting_method planting_time watering
-                       fertilization pruning harvest_method harvest_timeline pests homeopathic_remedies spacing other_notes].sort
+                       fertilization pruning harvest_method harvest_timeline pests homeopathic_remedies 
+                       spacing other_notes plant_img_url].sort
 
     expect(Plant.count).to eq(0)
     headers = {

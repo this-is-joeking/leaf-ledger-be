@@ -14,6 +14,7 @@ Rails.application.configure do
   config.cache_classes = true
   Rails.application.routes.default_url_options[:host] = ENV['BASE_URL']
 
+  config.action_mailer.default_url_options = { host: ENV['BASE_URL'] }
 
   # Eager loading loads your whole application. When running a single test locally,
   # this probably isn't necessary. It's a good idea to do in a continuous integration

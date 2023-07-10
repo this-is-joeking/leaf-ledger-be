@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ErrorSerializer
   def self.not_found(error_message)
     {

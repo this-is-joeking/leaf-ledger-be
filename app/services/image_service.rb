@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImageService < AiService
   def self.new(plant_name)
     response = conn.post('/v1/images/generations') do |req|

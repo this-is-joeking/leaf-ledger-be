@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_06_171529) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_170936) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -57,9 +57,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_06_171529) do
     t.string "homeopathic_remedies"
     t.string "spacing"
     t.string "other_notes"
+    t.string "plant_img"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "plant_img"
   end
 
   create_table "user_plants", force: :cascade do |t|

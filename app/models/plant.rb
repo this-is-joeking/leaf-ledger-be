@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 include Rails.application.routes.url_helpers
 
 class Plant < ApplicationRecord
@@ -11,8 +12,9 @@ class Plant < ApplicationRecord
 
   def grab_image
     return unless plant_img
-    downloaded_image = Down.download(self.plant_img)
-    ai_generated_image.attach(io: downloaded_image, filename: "#{self.common_name}.jpg")
+
+    downloaded_image = Down.download(plant_img)
+    ai_generated_image.attach(io: downloaded_image, filename: "#{common_name}.jpg")
   end
 
   def plant_img_url

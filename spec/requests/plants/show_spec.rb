@@ -6,7 +6,7 @@ RSpec.describe 'plant details', :vcr do
   it 'returns all the details for a plant in the database' do
     plant = create(:plant, common_name: 'Jalapeno')
     expected_keys = %i[scientific_name common_name sun_exposure planting_method planting_time watering
-                       fertilization pruning harvest_method harvest_timeline pests homeopathic_remedies 
+                       fertilization pruning harvest_method harvest_timeline pests homeopathic_remedies
                        spacing other_notes plant_img_url].sort
 
     expect(Plant.count).to eq(1)

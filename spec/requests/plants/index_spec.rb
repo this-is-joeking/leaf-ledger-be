@@ -81,7 +81,7 @@ RSpec.describe 'plant index', :vcr do
         'ACCEPT' => 'application/json'
       }
       get('/api/v1/plants?q=bAsiL', headers:)
-  
+
       plant_data = JSON.parse(response.body, symbolize_names: true)
       plant = plant_data[:data][0]
 
@@ -102,13 +102,12 @@ RSpec.describe 'plant index', :vcr do
       plant1 = create(:plant, common_name: 'jalapeno pepper')
       plant2 = create(:plant, common_name: 'anaheim pepper')
       plant3 = create(:plant, common_name: 'bell pepper')
-      expected_search_results = [plant1.id, plant2.id, plant3.id]
       headers = {
         'CONTENT_TYPE' => 'application/json',
         'ACCEPT' => 'application/json'
       }
       get('/api/v1/plants?q=pepp', headers:)
-  
+
       plant_data = JSON.parse(response.body, symbolize_names: true)
       plants = plant_data[:data]
 

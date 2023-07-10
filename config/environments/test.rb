@@ -12,7 +12,7 @@ Rails.application.configure do
   # Rails.application.routes.default_url_options[:host] = 'localhost:3000'
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
   config.cache_classes = true
-  
+
   # config.action_mailer.default_url_options = { host: 'http://localhost:3000' }
   # config.action_mailer.asset_host = 'http://localhost:3000'
 
@@ -67,4 +67,3 @@ Rails.application.configure do
     Rails.application.routes.default_url_options[:host] = 'localhost:3000'
   end
 end
-

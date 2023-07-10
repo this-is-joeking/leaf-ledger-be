@@ -18,7 +18,7 @@ class CreatePlants < ActiveRecord::Migration[7.0]
       t.string :spacing
       t.string :other_notes
       t.string :plant_img
-      
+
       t.timestamps
     end
   end

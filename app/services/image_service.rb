@@ -4,8 +4,8 @@ class ImageService < AiService
       req.body = {
         "prompt": "A mature and flourishing #{plant_name} in a garden in the style of photo realistic art",
         "n": 1,
-        "size": "512x512"
-    }.to_json
+        "size": '512x512'
+      }.to_json
     end
     parse(response.body)
   end

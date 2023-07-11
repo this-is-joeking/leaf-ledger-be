@@ -21,7 +21,8 @@
             "pests": "Common pests include aphids, caterpillars, and snails",
             "homeopathic_remedies": "Spraying a mixture of water and dish soap can help control aphids. Handpicking caterpillars and snails is also effective.",
             "spacing": "Plant seeds about 6-12 inches apart",
-            "other_notes": "Sunflowers are known for their tall and striking appearance. They can grow up to 10 feet tall, so make sure to provide support if needed."
+            "other_notes": "Sunflowers are known for their tall and striking appearance. They can grow up to 10 feet tall, so make sure to provide support if needed.",
+            "plant_img_url": "http://localhost:3000//rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ff9771a29ea1a123cfdf43ce57e916ee5e0e3b92/Sunflower.jpg
         }
     }
 }

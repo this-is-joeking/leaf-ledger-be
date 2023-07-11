@@ -22,7 +22,8 @@
                 "pests": "Aphids, whiteflies, and slugs",
                 "homeopathic_remedies": "Planting companion plants like marigolds or using neem oil spray",
                 "spacing": "12-18 inches apart",
-                "other_notes": "Basil is sensitive to cold temperatures, so protect from frost"
+                "other_notes": "Basil is sensitive to cold temperatures, so protect from frost",
+                "plant_img_url": "https://leaf-ledger-be.herokuapp.com//rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ff9771a29ea1a123cfdf43ce57e916ee5e0e3b92/Basil.jpg"
             }
         },
         {
@@ -42,7 +43,8 @@
                 "pests": "Common pests include aphids, flea beetles, and spider mites",
                 "homeopathic_remedies": "Spraying the plants with a mixture of water and neem oil can help deter pests",
                 "spacing": "Space jalapeno plants about 12-18 inches apart",
-                "other_notes": "Jalapenos thrive in well-drained soil and benefit from staking or support as they grow"
+                "other_notes": "Jalapenos thrive in well-drained soil and benefit from staking or support as they grow",
+                "plant_img_url": "https://leaf-ledger-be.herokuapp.com//rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ff9771a29ea1a123cfdf43ce57e916ee5e0e3b92/Jalapeno.jpg"
             }
         }
     ]

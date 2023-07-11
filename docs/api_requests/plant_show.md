@@ -21,7 +21,8 @@
             "pests": "Common pests include aphids, spider mites, and whiteflies",
             "homeopathic_remedies": "Spray plants with a solution of water and dish soap to deter pests",
             "spacing": "Plant seeds or seedlings 6-12 inches apart",
-            "other_notes": "Basil is an annual herb that can be grown in containers or raised beds. It prefers warm temperatures and well-draining soil."
+            "other_notes": "Basil is an annual herb that can be grown in containers or raised beds. It prefers warm temperatures and well-draining soil.",
+            "plant_img_url": "https://leaf-ledger-be.herokuapp.com//rails/active_storage/blobs/redirect/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBDQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--ff9771a29ea1a123cfdf43ce57e916ee5e0e3b92/Basil.jpg"
         }
     }
 }

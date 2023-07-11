@@ -20,12 +20,11 @@ module Api
 
       def index
         plants = if params[:q]
-                   # require 'pry'; binding.pry
-                   Plant.where('common_name ILIKE ?', "%#{params[:q]}%").order(:common_name)
+                   paginate Plant.where('common_name ILIKE ?', "%#{params[:q]}%")
                  else
-                   paginate Plant.order(:common_name)
+                   paginate Plant.all
                  end
-        render json: PlantSerializer.new(plants), status: :ok
+        render json: PlantSerializer.new(plants.order(:common_name)), status: :ok
       end
 
       private

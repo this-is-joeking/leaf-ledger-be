@@ -85,6 +85,7 @@ GEM
       aws-sigv4 (~> 1.6)
     aws-sigv4 (1.6.0)
       aws-eventstream (~> 1, >= 1.0.2)
+    bcrypt (3.1.19)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
     builder (3.2.4)
@@ -303,6 +304,7 @@ PLATFORMS
 DEPENDENCIES
   api-pagination
   aws-sdk-s3
+  bcrypt (~> 3.1.7)
   bootsnap
   capybara
   debug
@@ -312,6 +314,7 @@ DEPENDENCIES
   faraday
   figaro
   jsonapi-serializer
+  jwt
   kaminari
   omniauth
   omniauth-google-oauth2

@@ -2,7 +2,8 @@ module Api
   module V1
     class SessionsController < ApplicationController
       def create
-        require 'pry'; binding.pry
+        require 'pry'
+        binding.pry
       end
 
       private

@@ -19,9 +19,7 @@ gem 'pg', '~> 1.1'
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'aws-sdk-s3', require: false
 gem 'down'
-gem 'omniauth'
-gem 'omniauth-google-oauth2'
-gem 'omniauth-rails_csrf_protection'
+gem 'googleauth'
 gem 'puma', '~> 5.0'
 gem 'jwt'
 

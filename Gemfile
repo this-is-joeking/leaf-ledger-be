@@ -20,8 +20,9 @@ gem 'pg', '~> 1.1'
 gem 'aws-sdk-s3', require: false
 gem 'down'
 gem 'puma', '~> 5.0'
-# gem 'omniauth-google-oauth2'
-
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

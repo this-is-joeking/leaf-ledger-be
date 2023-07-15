@@ -20,8 +20,8 @@ gem 'pg', '~> 1.1'
 gem 'aws-sdk-s3', require: false
 gem 'down'
 gem 'googleauth'
-gem 'puma', '~> 5.0'
 gem 'jwt'
+gem 'puma', '~> 5.0'
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"

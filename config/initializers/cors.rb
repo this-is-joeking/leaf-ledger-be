@@ -9,11 +9,22 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins '*'
+    origins 'localhost:4000'
 
     resource '*',
              headers: :any,
              methods: %i[get post put patch delete options head],
-             expose: %w[Link Total Per-Page]
+             expose: %w[Link Total Per-Page],
+             credentials: true
+  end
+
+  allow do
+    origins 'https://plantgpt.netlify.app/'
+
+    resource '*',
+             headers: :any,
+             methods: %i[get post put patch delete options head],
+             expose: %w[Link Total Per-Page],
+             credentials: true
   end
 end

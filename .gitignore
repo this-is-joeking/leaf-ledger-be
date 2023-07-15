@@ -31,3 +31,6 @@
 
 # Ignore test coverage reports
 /coverage
+
+# Ignore service account key
+/app/lib/plant-gpt1-ed5bb201f24d.json

@@ -19,6 +19,15 @@ class ErrorSerializer
     }
   end
 
+  def invalid_token(error_message)
+    {
+      "error": {
+        "code": 401,
+        "message": error_message
+      }
+    }
+  end
+
   def self.missing_param(param)
     {
       "error": {

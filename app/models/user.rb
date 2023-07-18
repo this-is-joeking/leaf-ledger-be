@@ -5,5 +5,5 @@ class User < ApplicationRecord
   has_many :plants, through: :user_plants
 
   validates_presence_of :name, :email
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, :gid
 end

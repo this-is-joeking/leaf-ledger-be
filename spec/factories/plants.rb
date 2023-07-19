@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :plant do
-    scientific_name { Faker::Lorem.word }
+    scientific_name { Faker::Lorem.unique.sentence }
     common_name { Faker::Lorem.word }
     sun_exposure { Faker::Lorem.sentence(word_count: 3) }
     planting_time { Faker::Lorem.sentence(word_count: 4) }

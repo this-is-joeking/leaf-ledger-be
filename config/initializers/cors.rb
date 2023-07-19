@@ -19,7 +19,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   end
 
   allow do
-    origins 'https://plantgpt.netlify.app/'
+    origins 'https://plantgpt.netlify.app'
 
     resource '*',
              headers: :any,

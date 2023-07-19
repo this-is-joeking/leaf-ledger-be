@@ -298,7 +298,6 @@ DEPENDENCIES
   figaro
   googleauth
   jsonapi-serializer
-  jwt
   kaminari
   pg (~> 1.1)
   pry

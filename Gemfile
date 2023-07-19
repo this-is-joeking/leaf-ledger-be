@@ -47,6 +47,7 @@ gem 'jsonapi-serializer'
 
 # Use Rack CORS fogsr handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
+gem 'rack-attack'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

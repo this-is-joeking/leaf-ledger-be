@@ -9,6 +9,7 @@ class Plant < ApplicationRecord
   before_save :grab_image
 
   validates_presence_of :scientific_name, :common_name
+  validates_uniqueness_of :scientific_name
 
   def grab_image
     return unless plant_img

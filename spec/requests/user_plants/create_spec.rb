@@ -9,7 +9,7 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
     expected_attributes = %i[user_id date_planted plant_id user_notes created_at updated_at].sort
 
     expect(user.plants.count).to eq(0)
-    
+
     post("/api/v1/users/#{user.id}/user_plants?plant_id=#{plant.id}")
 
     user_plant_data = JSON.parse(response.body, symbolize_names: true)

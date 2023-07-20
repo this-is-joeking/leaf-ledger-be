@@ -7,7 +7,9 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
     user = create(:user)
     plant = create(:plant)
     expected_attributes = %i[user_id date_planted plant_id user_notes created_at updated_at].sort
+
     expect(user.plants.count).to eq(0)
+    
     post("/api/v1/users/#{user.id}/user_plants?plant_id=#{plant.id}")
 
     user_plant_data = JSON.parse(response.body, symbolize_names: true)
@@ -24,6 +26,7 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
     expect(user_plant_data[:data][:attributes][:user_id]).to eq(user.id)
     expect(user_plant_data[:data][:attributes][:plant_id]).to eq(plant.id)
     expect(user_plant_data[:data][:attributes][:user_notes]).to be nil
+    expect(user_plant_data[:data][:attributes][:date_planted]).to be nil
     expect(user_plant_data[:data][:attributes][:created_at]).to be_a String
     expect(user_plant_data[:data][:attributes][:updated_at]).to be_a String
     expect(user_plant_data[:data][:attributes][:created_at].to_datetime).to be_a DateTime

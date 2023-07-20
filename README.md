@@ -60,6 +60,7 @@ This app uses Rails 7.0.5.1 and Ruby 3.2.2
 - [Get all plants](/docs/api_requests/plant_index.md)
 - [Get a plant](/docs/api_requests/plant_show.md)
 - [Create a plant](/docs/api_requests/plant_show.md)
+- [Create a user_plant](/docs/api_requests/user_plant_create.md) (aka add a plant to a user's garden)
 ### APIs Used
 
 Things you may want to cover:
@@ -81,6 +82,3 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
-
-
-TODO: Add error handling for any unexpected response from chat gpt

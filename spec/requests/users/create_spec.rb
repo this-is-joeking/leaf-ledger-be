@@ -15,7 +15,7 @@ RSpec.describe 'create a user' do
     user_data = JSON.parse(response.body, symbolize_names: true)
     expect(User.count).to eq(1)
     user = User.last
-    expect(response).to be_successful
+    expect(response).to have_http_status(201)
     expect(user_data.keys).to eq([:data])
     expect(user_data[:data].keys.sort).to eq(%i[id type attributes].sort)
     expect(user_data[:data][:id].to_i).to eq(user.id)
@@ -35,7 +35,7 @@ RSpec.describe 'create a user' do
       'ACCEPT' => 'application/json'
     }
     post('/api/v1/users', headers:, params:)
-
+    require 'pry'; binding.pry
     user_data = JSON.parse(response.body, symbolize_names: true)
     expect(User.count).to eq(1)
     user = User.last

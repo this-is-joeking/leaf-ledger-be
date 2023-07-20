@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'plant details', :vcr do
   it 'returns all the details for a plant in the database' do
-    plant = create(:plant, common_name: 'Jalapeno')
+    plant = create(:plant, common_name: 'Jalapeno', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
     expected_keys = %i[scientific_name common_name sun_exposure planting_method planting_time watering
                        fertilization pruning harvest_method harvest_timeline pests homeopathic_remedies
                        spacing other_notes plant_img_url].sort
@@ -36,7 +36,7 @@ RSpec.describe 'plant details', :vcr do
   end
 
   it 'provides an error message for invalid id' do
-    plant = create(:plant, common_name: 'jalapeno')
+    plant = create(:plant, common_name: 'jalapeno', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
     invalid_id = plant.id + 1
 
     headers = {

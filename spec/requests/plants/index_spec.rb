@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'plant index', :vcr do
   it 'returns an array of all plants in the database' do
-    create_list(:plant, 5)
+    create_list(:plant, 5, plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
 
     headers = {
       'CONTENT_TYPE' => 'application/json',
@@ -32,7 +32,7 @@ RSpec.describe 'plant index', :vcr do
   end
 
   it 'returns paginated response with 25 items per page' do
-    create_list(:plant, 30)
+    create_list(:plant, 30, plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
     headers = {
       'CONTENT_TYPE' => 'application/json',
       'ACCEPT' => 'application/json'
@@ -55,9 +55,9 @@ RSpec.describe 'plant index', :vcr do
   end
 
   it 'returns results in alphabetical order by common name' do
-    plant1 = create(:plant, common_name: 'Basil')
-    plant2 = create(:plant, common_name: 'Zebra')
-    plant3 = create(:plant, common_name: 'Apple')
+    plant1 = create(:plant, common_name: 'Basil', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
+    plant2 = create(:plant, common_name: 'Zebra', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
+    plant3 = create(:plant, common_name: 'Apple', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
 
     headers = {
       'CONTENT_TYPE' => 'application/json',
@@ -73,8 +73,8 @@ RSpec.describe 'plant index', :vcr do
 
   describe 'search function/filter results' do
     it 'accepts parameter to search by plant name case insensitive' do
-      create_list(:plant, 30)
-      create(:plant, common_name: 'Basil')
+      create_list(:plant, 30, plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
+      create(:plant, common_name: 'Basil', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
 
       headers = {
         'CONTENT_TYPE' => 'application/json',
@@ -98,10 +98,10 @@ RSpec.describe 'plant index', :vcr do
     end
 
     it 'returns all partial matches in alpha order' do
-      create_list(:plant, 30)
-      plant1 = create(:plant, common_name: 'jalapeno pepper')
-      plant2 = create(:plant, common_name: 'anaheim pepper')
-      plant3 = create(:plant, common_name: 'bell pepper')
+      create_list(:plant, 30, plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
+      plant1 = create(:plant, common_name: 'jalapeno pepper', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
+      plant2 = create(:plant, common_name: 'anaheim pepper', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
+      plant3 = create(:plant, common_name: 'bell pepper', plant_img: 'https://file-examples.com/storage/fede3f30f864a1f979d2bf0/2017/10/file_example_JPG_100kB.jpg')
       headers = {
         'CONTENT_TYPE' => 'application/json',
         'ACCEPT' => 'application/json'

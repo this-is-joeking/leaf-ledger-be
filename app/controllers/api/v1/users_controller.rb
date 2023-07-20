@@ -8,7 +8,7 @@ module Api
 
         user ||= User.create!(user_params)
 
-        render json: UserSerializer.new(user), status: :ok
+        render json: UserSerializer.new(user), status: :created
       end
 
       def user_params

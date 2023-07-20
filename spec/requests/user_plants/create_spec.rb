@@ -43,4 +43,35 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
     expect(error_message[:error][:code]).to eq(422)
     expect(error_message[:error][:message]).to eq("Validation failed: Plant must exist")
   end
+
+  it 'responds with appropriate error message if invalid user id is sent' do
+    user_id = 1
+    plant = create(:plant)
+    expect(plant.users.count).to eq(0)
+    post("/api/v1/users/#{user_id}/user_plants?plant_id=#{plant.id}")
+
+    error_message = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(plant.users.count).to eq(0)
+    expect(response).to have_http_status(422)
+    expect(error_message.keys).to eq([:error])
+    expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
+    expect(error_message[:error][:code]).to eq(422)
+    expect(error_message[:error][:message]).to eq("Validation failed: User must exist")
+  end
+
+  it 'responds with appropriate error message if user and plant id are invalid' do
+    user_id = 1
+    plant_id = 1
+    
+    post("/api/v1/users/#{user_id}/user_plants?plant_id=#{plant_id}")
+
+    error_message = JSON.parse(response.body, symbolize_names: true)
+    
+    expect(response).to have_http_status(422)
+    expect(error_message.keys).to eq([:error])
+    expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
+    expect(error_message[:error][:code]).to eq(422)
+    expect(error_message[:error][:message]).to eq("Validation failed: User must exist, Plant must exist")
+  end
 end

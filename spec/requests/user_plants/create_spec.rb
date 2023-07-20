@@ -26,7 +26,21 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
     expect(user_plant_data[:data][:attributes][:updated_at]).to be_a String
     expect(user_plant_data[:data][:attributes][:created_at].to_datetime).to be_a DateTime
     expect(user_plant_data[:data][:attributes][:updated_at].to_datetime).to be_a DateTime
+  end
+
+  it 'responds with appropriate error message if invalid plant id is sent' do
+    user = create(:user)
+    plant_id = 1
+    expect(user.plants.count).to eq(0)
+    post("/api/v1/users/#{user.id}/user_plants?plant_id=#{plant_id}")
+
+    error_message = JSON.parse(response.body, symbolize_names: true)
     
-    
+    expect(user.plants.count).to eq(0)
+    expect(response).to have_http_status(422)
+    expect(error_message.keys).to eq([:error])
+    expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
+    expect(error_message[:error][:code]).to eq(422)
+    expect(error_message[:error][:message]).to eq("Validation failed: Plant must exist")
   end
 end

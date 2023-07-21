@@ -16,6 +16,6 @@ FactoryBot.define do
     homeopathic_remedies { Faker::Lorem.sentence(word_count: 3) }
     spacing { Faker::Lorem.sentence(word_count: 3) }
     other_notes { Faker::Lorem.sentence(word_count: 3) }
-    plant_img { 'https://file-examples.com/storage/fee472ce6e64b122ba0c8b3/2017/10/file_example_JPG_100kB.jpg' }
+    plant_img { 'https://watchandlearn.scholastic.com/content/dam/classroom-magazines/watchandlearn/videos/animals-and-plants/plants/what-are-plants-/What-Are-Plants.jpg' }
   end
 end

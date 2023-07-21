@@ -21,8 +21,7 @@ RSpec.describe 'editing a users plants', :vcr do
     patch("/api/v1/users/#{user.id}/user_plants/#{up.id}", headers:, params: JSON.generate(params))
 
     user_plant_data = JSON.parse(response.body, symbolize_names: true)
-    require 'pry'
-    binding.pry
+
     expect(UserPlant.find(up.id).user_notes).to eq(user_notes)
     expect(UserPlant.find(up.id).date_planted).to eq(Date.parse(date_planted))
 

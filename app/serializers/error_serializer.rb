@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 
 class ErrorSerializer
+  def self.forbidden(message)
+    {
+      "error": {
+        "code": 403,
+        "message": message
+      }
+    }
+  end
+
   def self.not_found(error_message)
     {
       "error": {

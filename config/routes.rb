@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :plants, only: %i[show create index]
       resources :users, only: :create do
-        resources :user_plants, only: :create
+        resources :user_plants, only: %i[create update]
       end
     end
   end

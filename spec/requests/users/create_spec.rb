@@ -35,7 +35,7 @@ RSpec.describe 'create a user' do
       'ACCEPT' => 'application/json'
     }
     post('/api/v1/users', headers:, params:)
-    require 'pry'; binding.pry
+
     user_data = JSON.parse(response.body, symbolize_names: true)
     expect(User.count).to eq(1)
     user = User.last

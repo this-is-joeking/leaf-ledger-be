@@ -38,7 +38,7 @@ RSpec.describe 'deleting a user_plant', :vcr do
   it 'returns an appropriate error message if passed an invalid user plant id' do
     user = create(:user)
     bad_id = 1
-    
+
     delete("/api/v1/users/#{user.id}/user_plants/#{bad_id}")
 
     error_message = JSON.parse(response.body, symbolize_names: true)

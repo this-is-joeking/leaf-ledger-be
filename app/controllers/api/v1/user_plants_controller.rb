@@ -9,10 +9,15 @@ module Api
       end
 
       def update
+        user = User.find(params[:user_id])
         up = UserPlant.find(params[:id])
-        up.update(user_plant_params)
+        if up.user == user
+          up.update(user_plant_params)
 
-        render json: UserPlantSerializer.new(up), status: :ok
+          render json: UserPlantSerializer.new(up), status: :ok
+        else
+          render json: ErrorSerializer.forbidden("UserPlant #{up.id} does not belong to user #{user.id}"), status: :forbidden
+        end
       end
 
       def user_plant_params

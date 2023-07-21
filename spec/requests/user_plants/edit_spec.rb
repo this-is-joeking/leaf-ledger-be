@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'editing a users plants', :vcr do
-  it 'allows users to update the planted at date' do
+  it 'allows users to update the notes and planted at date' do
     user = create(:user)
     plant = create(:plant)
     up = UserPlant.create!(user:, plant:)
@@ -79,10 +79,10 @@ RSpec.describe 'editing a users plants', :vcr do
 
     error_message = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response).to have_http_status(404)
+    expect(response).to have_http_status(403)
     expect(error_message.keys).to eq([:error])
     expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
-    expect(error_message[:error][:code]).to eq(404)
-    expect(error_message[:error][:message]).to eq('UserPlant does not belong to user passed')
+    expect(error_message[:error][:code]).to eq(403)
+    expect(error_message[:error][:message]).to eq("UserPlant #{up.id} does not belong to user #{user2.id}")
   end
 end

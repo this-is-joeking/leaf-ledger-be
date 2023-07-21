@@ -16,7 +16,8 @@ module Api
 
           render json: UserPlantSerializer.new(up), status: :ok
         else
-          render json: ErrorSerializer.forbidden("UserPlant #{up.id} does not belong to user #{user.id}"), status: :forbidden
+          render json: ErrorSerializer.forbidden("UserPlant #{up.id} does not belong to user #{user.id}"),
+                 status: :forbidden
         end
       end
 

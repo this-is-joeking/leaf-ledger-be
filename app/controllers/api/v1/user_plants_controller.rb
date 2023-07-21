@@ -21,6 +21,21 @@ module Api
         end
       end
 
+      def destroy
+        user = User.find(params[:user_id])
+        up = UserPlant.find(params[:id])
+        if up.user == user
+          up.destroy
+
+          render status: :no_content
+        else
+          render json: ErrorSerializer.forbidden("UserPlant #{up.id} does not belong to user #{user.id}"),
+                 status: :forbidden
+        end
+      end
+
+      private
+
       def user_plant_params
         params.permit(:plant_id, :user_id, :user_notes, :date_planted)
       end

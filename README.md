@@ -63,6 +63,7 @@ This app uses Rails 7.0.5.1 and Ruby 3.2.2
 - [Create a user](/docs/api_requests/user_create.md)
 - [Create a user_plant](/docs/api_requests/user_plant_create.md) (aka add a plant to a user's garden)
 - [Edit a user_plant](/docs/api_requests/user_plant_edit.md)
+- [Delete a user_plant](/docs/api_requests/user_plant_destroy.md)
 ### APIs Used
 
 Things you may want to cover:

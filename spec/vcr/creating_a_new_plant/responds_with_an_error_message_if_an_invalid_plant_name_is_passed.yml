@@ -37,7 +37,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 05 Jul 2023 14:51:20 GMT
+      - Fri, 21 Jul 2023 17:26:13 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -53,7 +53,7 @@ http_interactions:
       Openai-Organization:
       - user-sofybxq5yiakjqv9a2vrlojl
       Openai-Processing-Ms:
-      - '892'
+      - '572'
       Openai-Version:
       - '2020-10-01'
       Strict-Transport-Security:
@@ -71,22 +71,22 @@ http_interactions:
       X-Ratelimit-Reset-Tokens:
       - 190ms
       X-Request-Id:
-      - 7432622506cc38e0d6821f33f7b59ecf
+      - b9c9547a60a84fe8ce5d108b8294b945
       Cf-Cache-Status:
       - DYNAMIC
       Server:
       - cloudflare
       Cf-Ray:
-      - 7e206ce49cfd1b05-PHX
+      - 7ea525c8f9cedf00-PHX
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: UTF-8
       string: |
         {
-          "id": "chatcmpl-7Yy8eUKVe5jc0euK7n4GIjXXvs5Jw",
+          "id": "chatcmpl-7eoBJMc1VtNZF12Kecj2ThjxRJIur",
           "object": "chat.completion",
-          "created": 1688568680,
+          "created": 1689960373,
           "model": "gpt-3.5-turbo-0613",
           "choices": [
             {
@@ -104,5 +104,5 @@ http_interactions:
             "total_tokens": 270
           }
         }
-  recorded_at: Wed, 05 Jul 2023 14:51:20 GMT
+  recorded_at: Fri, 21 Jul 2023 17:26:13 GMT
 recorded_with: VCR 6.1.0

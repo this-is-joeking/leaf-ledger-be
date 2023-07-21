@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 21 Jul 2023 17:27:19 GMT
+      - Fri, 21 Jul 2023 17:26:17 GMT
       Content-Type:
       - image/jpeg
       Content-Length:
@@ -27,19 +27,19 @@ http_interactions:
       Connection:
       - keep-alive
       Cf-Ray:
-      - 7ea52767b93b0928-LAX
+      - 7ea525e4d8747c4d-LAX
       Cf-Cache-Status:
       - HIT
       Accept-Ranges:
       - bytes
       Age:
-      - '1278'
+      - '5744'
       Cache-Control:
       - public, max-age=14400
       Etag:
       - '"7907d-60056065017a6"'
       Expires:
-      - Fri, 21 Jul 2023 21:27:19 GMT
+      - Fri, 21 Jul 2023 21:26:17 GMT
       Last-Modified:
       - Thu, 13 Jul 2023 03:35:33 GMT
       Vary:
@@ -49,10 +49,10 @@ http_interactions:
       Cf-Polished:
       - degrade=85, origSize=495741
       Set-Cookie:
-      - __cf_bm=7h2zHy4uuLjZetuYq0H1JnQPz2yLvF0iIoyjiZVFEig-1689960439-0-ASA1hnn3V6x6dcwLjC6gx+B4zf4I4QY1J+iqNptFCm7PiwlNIy4COv67n5J9qU22AID+dLzj6H/A8+o9G0YwsK0=;
-        path=/; expires=Fri, 21-Jul-23 17:57:19 GMT; domain=.watchandlearn.scholastic.com;
+      - __cf_bm=7dNyCW4.91WpoMOvl0TBxCTCKcYnLkgAyysMJNluG5o-1689960377-0-ATkcavUf+lHnX15jqj1YeKPVl7YdC22CMmEScc4Me0uV+pniChrsP4K5EDSs6qbG5uPNe7FecWpjZWbAOybrgLQ=;
+        path=/; expires=Fri, 21-Jul-23 17:56:17 GMT; domain=.watchandlearn.scholastic.com;
         HttpOnly; Secure; SameSite=None
-      - _cfuvid=zds6OjNkSKHBQtBRGvYUcQ5hyFInj6wp66ufX0ei0Es-1689960439579-0-604800000;
+      - _cfuvid=jje3b2l1.66TKN39WWoCBgOboBGky.qkY1hddM6NU1I-1689960377657-0-604800000;
         path=/; domain=.watchandlearn.scholastic.com; HttpOnly; Secure; SameSite=None
       Server:
       - cloudflare
@@ -1900,5 +1900,5 @@ http_interactions:
         tahAvcBVupUzBHeE0whatVoIhVnwKvAAQIBMqztUMpmOiAyC3SyqZqjDSZrt
         oU6KkE8jdYhfh6E6yhxN4TtF5UA0oBFlIrVeYPNBNBZNkC5GoCfFJHPcI+Zo
         P5f/2Q==
-  recorded_at: Fri, 21 Jul 2023 17:27:19 GMT
+  recorded_at: Fri, 21 Jul 2023 17:26:17 GMT
 recorded_with: VCR 6.1.0

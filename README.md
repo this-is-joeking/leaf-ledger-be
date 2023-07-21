@@ -56,11 +56,13 @@ This app uses Rails 7.0.5.1 and Ruby 3.2.2
 ### Database Schema
 ![datbase diagram](/app/assets/images/db-diagram.png)
 
-### API Requests
+### API Endpoints
 - [Get all plants](/docs/api_requests/plant_index.md)
 - [Get a plant](/docs/api_requests/plant_show.md)
 - [Create a plant](/docs/api_requests/plant_show.md)
+- [Create a user](/docs/api_requests/user_create.md)
 - [Create a user_plant](/docs/api_requests/user_plant_create.md) (aka add a plant to a user's garden)
+- [Edit a user_plant](/docs/api_requests/user_plant_edit.md)
 ### APIs Used
 
 Things you may want to cover:

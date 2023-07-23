@@ -6,7 +6,7 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
   it 'lets users add an existing plant to their garden' do
     user = create(:user)
     plant = create(:plant)
-    expected_attributes = %i[user_id date_planted plant_id user_notes created_at updated_at].sort
+    expected_attributes = %i[date_planted user_notes created_at updated_at].sort
 
     expect(user.plants.count).to eq(0)
 
@@ -19,18 +19,21 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
 
     expect(response).to have_http_status(201)
     expect(user_plant_data.keys).to eq([:data])
-    expect(user_plant_data[:data].keys.sort).to eq(%i[id type attributes].sort)
+    expect(user_plant_data[:data].keys.sort).to eq(%i[id type attributes relationships].sort)
     expect(user_plant_data[:data][:id].to_i).to eq(UserPlant.first.id)
     expect(user_plant_data[:data][:type]).to eq('user_plant')
     expect(user_plant_data[:data][:attributes].keys.sort).to eq(expected_attributes)
-    expect(user_plant_data[:data][:attributes][:user_id]).to eq(user.id)
-    expect(user_plant_data[:data][:attributes][:plant_id]).to eq(plant.id)
     expect(user_plant_data[:data][:attributes][:user_notes]).to be nil
     expect(user_plant_data[:data][:attributes][:date_planted]).to be nil
     expect(user_plant_data[:data][:attributes][:created_at]).to be_a String
     expect(user_plant_data[:data][:attributes][:updated_at]).to be_a String
     expect(user_plant_data[:data][:attributes][:created_at].to_datetime).to be_a DateTime
     expect(user_plant_data[:data][:attributes][:updated_at].to_datetime).to be_a DateTime
+    expect(user_plant_data[:data][:relationships].keys).to eq([:plant])
+    expect(user_plant_data[:data][:relationships][:plant].keys).to eq([:data])
+    expect(user_plant_data[:data][:relationships][:plant][:data].keys.sort).to eq([:id, :type])
+    expect(user_plant_data[:data][:relationships][:plant][:data][:type]).to eq('plant')
+    expect(user_plant_data[:data][:relationships][:plant][:data][:id].to_i).to eq(plant.id)
   end
 
   it 'responds with appropriate error message if invalid plant id is sent' do

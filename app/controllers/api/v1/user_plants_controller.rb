@@ -20,6 +20,13 @@ module Api
         end
       end
 
+      def index
+        user = User.find(params[:user_id])
+        ups = user.user_plants
+        options = { include: [:plant] }
+        render json: UserPlantSerializer.new(ups, options), status: :ok
+      end
+
       def update
         user = User.find(params[:user_id])
         up = UserPlant.find(params[:id])

@@ -43,4 +43,32 @@ RSpec.describe 'user_plant show request', :vcr do
       expect(user_plant_data[:included].first[:attributes][key]).to be_a String
     end
   end
+
+  it 'returns an appropriate error if an invalid user plant and user id is requested' do
+    get("/api/v1/users/1/user_plants/1")
+
+    error_message = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to have_http_status(404)
+    expect(error_message.keys).to eq([:error])
+    expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
+    expect(error_message[:error][:code]).to eq(404)
+    expect(error_message[:error][:message]).to eq("Couldn't find User with 'id'=1")
+  end
+
+  it 'returns appropriate error message if user plant does not belong to user' do
+    user1 = create(:user)
+    user2 = create(:user)
+    plant = create(:plant)
+    up = UserPlant.create(user: user1, plant:)
+
+    get("/api/v1/users/#{user2.id}/user_plants/#{up.id}")
+    error_message = JSON.parse(response.body, symbolize_names: true)
+
+    expect(response).to have_http_status(403)
+    expect(error_message.keys).to eq([:error])
+    expect(error_message[:error].keys.sort).to eq(%i[code message].sort)
+    expect(error_message[:error][:code]).to eq(403)
+    expect(error_message[:error][:message]).to eq("UserPlant #{up.id} does not belong to user #{user2.id}")
+  end
 end

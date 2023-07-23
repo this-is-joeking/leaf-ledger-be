@@ -7,8 +7,9 @@ RSpec.describe 'user plant index request', :vcr do
     user = create(:user)
     plant_count = 3
     plants = create_list(:plant, plant_count)
-    expected_up_attributes = [:user_notes, :date_planted, :updated_at, :created_at].sort
-    expected_plant_attributes = [:scientific_name, :common_name, :sun_exposure, :planting_time, :planting_method, :watering, :fertilization, :pruning, :harvest_timeline, :harvest_method, :pests, :homeopathic_remedies, :spacing, :other_notes, :plant_img_url].sort
+    expected_up_attributes = %i[user_notes date_planted updated_at created_at].sort
+    expected_plant_attributes = %i[scientific_name common_name sun_exposure planting_time planting_method
+                                   watering fertilization pruning harvest_timeline harvest_method pests homeopathic_remedies spacing other_notes plant_img_url].sort
 
     plants.each do |plant|
       UserPlant.create(user:, plant:)
@@ -19,22 +20,22 @@ RSpec.describe 'user plant index request', :vcr do
     user_plants_data = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to have_http_status(200)
-    expect(user_plants_data.keys.sort).to eq([:data, :included].sort)
+    expect(user_plants_data.keys.sort).to eq(%i[data included].sort)
     expect(user_plants_data[:data]).to be_an Array
     expect(user_plants_data[:data].count).to eq(plant_count)
     user_plants_data[:data].each do |user_plant|
-      expect(user_plant.keys.sort).to eq([:id, :type, :attributes, :relationships].sort)
+      expect(user_plant.keys.sort).to eq(%i[id type attributes relationships].sort)
       expect(user_plant[:id]).to be_a String
       expect(user_plant[:type]).to eq('user_plant')
       expect(user_plant[:attributes].keys.sort).to eq(expected_up_attributes)
       expect(user_plant[:relationships].keys).to eq([:plant])
       expect(user_plant[:relationships][:plant].keys).to eq([:data])
-      expect(user_plant[:relationships][:plant][:data].keys).to eq([:id, :type])
+      expect(user_plant[:relationships][:plant][:data].keys).to eq(%i[id type])
     end
     expect(user_plants_data[:included]).to be_an Array
     expect(user_plants_data[:included].count).to eq(plant_count)
     user_plants_data[:included].each do |plant|
-      expect(plant.keys.sort).to eq([:id, :type, :attributes].sort)
+      expect(plant.keys.sort).to eq(%i[id type attributes].sort)
       expect(plant[:id]).to be_a String
       expect(plant[:type]).to eq('plant')
       expect(plant[:attributes].keys.sort).to eq(expected_plant_attributes)

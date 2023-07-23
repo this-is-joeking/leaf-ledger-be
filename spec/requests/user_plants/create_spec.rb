@@ -31,7 +31,7 @@ RSpec.describe 'User adding a plant to their garden', :vcr do
     expect(user_plant_data[:data][:attributes][:updated_at].to_datetime).to be_a DateTime
     expect(user_plant_data[:data][:relationships].keys).to eq([:plant])
     expect(user_plant_data[:data][:relationships][:plant].keys).to eq([:data])
-    expect(user_plant_data[:data][:relationships][:plant][:data].keys.sort).to eq([:id, :type])
+    expect(user_plant_data[:data][:relationships][:plant][:data].keys.sort).to eq(%i[id type])
     expect(user_plant_data[:data][:relationships][:plant][:data][:type]).to eq('plant')
     expect(user_plant_data[:data][:relationships][:plant][:data][:id].to_i).to eq(plant.id)
   end

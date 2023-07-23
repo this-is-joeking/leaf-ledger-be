@@ -7,7 +7,7 @@ RSpec.describe 'editing a users plants', :vcr do
     user = create(:user)
     plant = create(:plant)
     up = UserPlant.create!(user:, plant:)
-    expected_attributes = %i[date_planted  user_notes created_at updated_at].sort
+    expected_attributes = %i[date_planted user_notes created_at updated_at].sort
     user_notes = 'I could not keep this plant alive last year'
     date_planted = '2023-07-20'
 

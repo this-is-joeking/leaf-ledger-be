@@ -45,7 +45,7 @@ RSpec.describe 'user_plant show request', :vcr do
   end
 
   it 'returns an appropriate error if an invalid user plant and user id is requested' do
-    get("/api/v1/users/1/user_plants/1")
+    get('/api/v1/users/1/user_plants/1')
 
     error_message = JSON.parse(response.body, symbolize_names: true)
 

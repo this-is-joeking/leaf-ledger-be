@@ -11,6 +11,15 @@ module Api
         render json: UserSerializer.new(user), status: :created
       end
 
+      def destroy
+        user = User.find(params[:id])
+        user.destroy
+
+        render status: :no_content
+      end
+
+      private
+
       def user_params
         params[:data][:gid] = params[:data][:id]
         params.require(:data).permit(:gid, :email, :name, :picture)

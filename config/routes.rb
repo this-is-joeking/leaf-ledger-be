@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :plants, only: %i[show create index]
-      resources :users, only: :create do
+      resources :users, only: %i[create destroy] do
         resources :user_plants
       end
     end

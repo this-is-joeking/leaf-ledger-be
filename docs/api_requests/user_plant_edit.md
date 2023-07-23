@@ -7,19 +7,18 @@ At least one of the two params should be passed as they are the only thing that 
 
 ## Example Response
 ```
-{ "data"=>
-  {
-    "id"=>"96",
-    "type"=>"user_plant",
-    "attributes"=>
-    {
-      "user_id"=>265,
-      "plant_id"=>3825,
-      "user_notes"=>"I could not keep this plant alive last year",
+{"data"=>
+  {"id"=>"246",
+   "type"=>"user_plant",
+   "attributes"=>
+      {"user_notes"=>"I could not keep this plant alive last year",
       "date_planted"=>"2023-07-20",
-      "updated_at"=>"2023-07-21T17:30:36.822Z",
-      "created_at"=>"2023-07-21T17:30:36.815Z"
-    }
+      "updated_at"=>"2023-07-23T14:10:56.470Z",
+      "created_at"=>"2023-07-23T14:10:56.443Z"},
+   "relationships"=>
+      {"plant"=>
+        {"data"=>{"id"=>"6027", "type"=>"plant"}}
+      }
   }
 }
 ```

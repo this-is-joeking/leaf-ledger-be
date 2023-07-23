@@ -4,16 +4,14 @@
 ## Example Response
 ```
 {"data"=>
-  {"id"=>"22",
+  {"id"=>"249",
    "type"=>"user_plant",
    "attributes"=>
-    {"user_id"=>96,
-     "plant_id"=>1807,
-     "user_notes"=>nil,
-     "date_planted"=>nil,
-     "updated_at"=>"2023-07-20T19:26:52.024Z",
-     "created_at"=>"2023-07-20T19:26:52.024Z"
-     }
+      {"user_notes"=>nil, "date_planted"=>nil, "updated_at"=>"2023-07-23T14:14:11.518Z", "created_at"=>"2023-07-23T14:14:11.518Z"},
+   "relationships"=>
+      {"plant"=>
+        {"data"=>{"id"=>"6030", "type"=>"plant"}}
+      }
   }
 }
 ```

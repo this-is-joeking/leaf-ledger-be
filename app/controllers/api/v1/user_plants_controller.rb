@@ -8,6 +8,25 @@ module Api
         render json: UserPlantSerializer.new(up), status: :created
       end
 
+      def show
+        user = User.find(params[:user_id])
+        up = UserPlant.find(params[:id])
+        if up.user == user
+          options = { include: [:plant] }
+          render json: UserPlantSerializer.new(up, options), status: :ok
+        else
+          render json: ErrorSerializer.forbidden("UserPlant #{up.id} does not belong to user #{user.id}"),
+                 status: :forbidden
+        end
+      end
+
+      def index
+        user = User.find(params[:user_id])
+        ups = user.user_plants
+        options = { include: [:plant] }
+        render json: UserPlantSerializer.new(ups, options), status: :ok
+      end
+
       def update
         user = User.find(params[:user_id])
         up = UserPlant.find(params[:id])

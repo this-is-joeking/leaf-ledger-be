@@ -7,7 +7,7 @@ RSpec.describe 'editing a users plants', :vcr do
     user = create(:user)
     plant = create(:plant)
     up = UserPlant.create!(user:, plant:)
-    expected_attributes = %i[user_id date_planted plant_id user_notes created_at updated_at].sort
+    expected_attributes = %i[date_planted user_notes created_at updated_at].sort
     user_notes = 'I could not keep this plant alive last year'
     date_planted = '2023-07-20'
 
@@ -27,12 +27,10 @@ RSpec.describe 'editing a users plants', :vcr do
 
     expect(response).to have_http_status(200)
     expect(user_plant_data.keys).to eq([:data])
-    expect(user_plant_data[:data].keys.sort).to eq(%i[id type attributes].sort)
+    expect(user_plant_data[:data].keys.sort).to eq(%i[id type attributes relationships].sort)
     expect(user_plant_data[:data][:id].to_i).to eq(up.id)
     expect(user_plant_data[:data][:type]).to eq('user_plant')
     expect(user_plant_data[:data][:attributes].keys.sort).to eq(expected_attributes)
-    expect(user_plant_data[:data][:attributes][:user_id]).to eq(user.id)
-    expect(user_plant_data[:data][:attributes][:plant_id]).to eq(plant.id)
     expect(user_plant_data[:data][:attributes][:user_notes]).to eq(user_notes)
     expect(user_plant_data[:data][:attributes][:date_planted]).to eq(date_planted)
     expect(Date.parse(user_plant_data[:data][:attributes][:date_planted])).to be_a Date

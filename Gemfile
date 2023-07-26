@@ -46,7 +46,7 @@ gem 'jsonapi-serializer'
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS fogsr handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem 'rack-attack'
+gem 'rack-attack', '>= 6.7.0'
 gem 'rack-cors'
 
 group :development, :test do

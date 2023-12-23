@@ -60,7 +60,7 @@ end
 group :test do
   gem 'capybara'
   gem 'rspec-rails'
-  gem 'shoulda-matchers', '~> 5.0'
+  gem 'shoulda-matchers', '~> 6.0', '>= 6.0.0'
   gem 'simplecov', require: false
   gem 'simplecov-cobertura', require: false
   gem 'vcr'

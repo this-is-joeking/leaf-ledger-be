@@ -64,7 +64,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-cobertura', require: false
   gem 'vcr'
-  gem 'webmock'
+  gem 'webmock', '>= 3.19.0'
 end
 
 group :development do

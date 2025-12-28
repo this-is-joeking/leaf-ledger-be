@@ -17,7 +17,7 @@ gem 'api-pagination'
 gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
-gem 'aws-sdk-s3', require: false
+gem 'aws-sdk-s3', '>= 1.208.0', require: false
 gem 'down'
 gem 'puma', '~> 5.0'
 
